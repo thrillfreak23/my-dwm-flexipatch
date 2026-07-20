@@ -179,12 +179,12 @@ static char normfgcolor[]                = "#bbbbbb";
 /* static char normbgcolor[]                = "#222222"; */
 static char normbgcolor[]                = "#353535";
 static char normbordercolor[]            = "#444444";
-static char normfloatcolor[]             = "#2499ff";
+static char normfloatcolor[]             = "#2f4f4f";
 
 static char selfgcolor[]                 = "#eeeeee";
-static char selbgcolor[]                 = "#415e4e";
-static char selbordercolor[]             = "#415e4e";
-static char selfloatcolor[]              = "#415e4e";
+static char selbgcolor[]                 = "#2f4f4f";
+static char selbordercolor[]             = "#777777";
+static char selfloatcolor[]              = "#2f4f4f";
 
 static char titlenormfgcolor[]           = "#bbbbbb";
 static char titlenormbgcolor[]           = "#222222";
@@ -192,9 +192,9 @@ static char titlenormbordercolor[]       = "#444444";
 static char titlenormfloatcolor[]        = "#2499ff";
 
 static char titleselfgcolor[]            = "#eeeeee";
-static char titleselbgcolor[]            = "#415e4e";
-static char titleselbordercolor[]        = "#415e4e";
-static char titleselfloatcolor[]         = "#415e4e";
+static char titleselbgcolor[]            = "#2f4f4f";
+static char titleselbordercolor[]        = "#2f4f4f";
+static char titleselfloatcolor[]         = "#2f4f4f";
 
 static char tagsnormfgcolor[]            = "#bbbbbb";
 static char tagsnormbgcolor[]            = "#222222";
@@ -202,11 +202,11 @@ static char tagsnormbordercolor[]        = "#444444";
 static char tagsnormfloatcolor[]         = "#2499ff";
 
 static char tagsselfgcolor[]             = "#eeeeee";
-static char tagsselbgcolor[]             = "#415e4e";
-static char tagsselbordercolor[]         = "#415e4e";
-static char tagsselfloatcolor[]          = "#415e4e";
+static char tagsselbgcolor[]             = "#2f4f4f";
+static char tagsselbordercolor[]         = "#777777";
+static char tagsselfloatcolor[]          = "#2f4f4f";
 
-static char hidnormfgcolor[]             = "#415e4e";
+static char hidnormfgcolor[]             = "#2f4f4f";
 static char hidselfgcolor[]              = "#227799";
 static char hidnormbgcolor[]             = "#222222";
 static char hidselbgcolor[]              = "#222222";
@@ -812,6 +812,8 @@ static const char *xkb_layouts[]  = {
 
 /* key definitions */
 #define MODKEY Mod4Mask
+
+
 #if COMBO_PATCH && SWAPTAGS_PATCH && TAGOTHERMONITOR_PATCH
 #define TAGKEYS(KEY,TAG) \
 	{ MODKEY,                       KEY,      comboview,      {.ui = 1 << TAG} }, \
@@ -908,7 +910,7 @@ static const char *dmenucmd[] = {
 	#endif // BAR_DMENUMATCHTOP_PATCH
 	NULL
 };
-static const char *termcmd[]  = { "kitty", NULL };
+static const char *termcmd[]  = { "alacritty", NULL };
 
 #if BAR_STATUSCMD_PATCH
 #if BAR_DWMBLOCKS_PATCH
@@ -1041,6 +1043,10 @@ ResourcePref resources[] = {
 #endif // XRESOURCES_PATCH
 
 static const Key keys[] = {
+
+
+   
+
 	/* modifier                     key            function                argument */
 	#if KEYMODES_PATCH
 	{ MODKEY,                       XK_Escape,     setkeymode,             {.ui = COMMANDMODE} },
@@ -1180,12 +1186,16 @@ static const Key keys[] = {
 	{ MODKEY|ShiftMask|ControlMask, XK_Right,      shifttagclients,        { .i = +1 } },
 	#endif // SHIFTTAGCLIENTS_PATCH
 	#if SHIFTVIEW_PATCH
-	{ MODKEY|ShiftMask,             XK_Tab,        shiftview,              { .i = -1 } },
-	{ MODKEY|ShiftMask,             XK_backslash,  shiftview,              { .i = +1 } },
+	// { MODKEY|ShiftMask,             XK_Tab,        shiftview,              { .i = -1 } },
+	// { MODKEY|ShiftMask,             XK_backslash,  shiftview,              { .i = +1 } },
+	{ ControlMask|Mod1Mask,             XK_Left,   shiftview,              { .i = -1 } },
+	{ ControlMask|Mod1Mask,             XK_Right,  shiftview,              { .i = +1 } },
 	#endif // SHIFTVIEW_PATCH
 	#if SHIFTVIEW_CLIENTS_PATCH
-	{ MODKEY|Mod4Mask,              XK_Tab,        shiftviewclients,       { .i = -1 } },
-	{ MODKEY|Mod4Mask,              XK_backslash,  shiftviewclients,       { .i = +1 } },
+	//{ MODKEY|Mod4Mask,              XK_Tab,        shiftviewclients,       { .i = -1 } },
+	//{ MODKEY|Mod4Mask,              XK_backslash,  shiftviewclients,       { .i = +1 } },
+	{ ControlMask|Mod1Mask,              XK_Left,    shiftviewclients,       { .i = -1 } },
+	{ ControlMask|Mod1Mask,              XK_Right,   shiftviewclients,       { .i = +1 } },
 	#endif // SHIFTVIEW_CLIENTS_PATCH
 	#if SHIFTBOTH_PATCH
 	{ MODKEY|ControlMask,           XK_Left,       shiftboth,              { .i = -1 } }, // note keybinding conflict with focusadjacenttag tagandviewtoleft placedir
