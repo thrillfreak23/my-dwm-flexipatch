@@ -167,11 +167,11 @@ static void (*bartabmonfns[])(Monitor *) = { NULL /* , customlayoutfn */ };
 #endif // MONOCLE_LAYOUT
 #endif // BAR_TABGROUPS_PATCH
 #if BAR_PANGO_PATCH
-static const char font[]                 = "monospace 10";
+static const char font[]                 = "Hack Nerd Font:style=bold:size=12";
 #else
-static const char *fonts[]               = { "monospace:size=13" };
+static const char *fonts[]               = { "Hack Nerd Font:style=bold:size=12" };
 #endif // BAR_PANGO_PATCH
-static const char dmenufont[]            = "monospace:size=14";
+static const char dmenufont[]            = "Hack Nerd Font:style=bol:size=12";
 
 static char c000000[]                    = "#000000"; // placeholder value
 
@@ -179,12 +179,12 @@ static char normfgcolor[]                = "#bbbbbb";
 /* static char normbgcolor[]                = "#222222"; */
 static char normbgcolor[]                = "#353535";
 static char normbordercolor[]            = "#444444";
-static char normfloatcolor[]             = "#2f4f4f";
+static char normfloatcolor[]             = "#007755";
 
 static char selfgcolor[]                 = "#eeeeee";
-static char selbgcolor[]                 = "#2f4f4f";
-static char selbordercolor[]             = "#777777";
-static char selfloatcolor[]              = "#2f4f4f";
+static char selbgcolor[]                 = "#007755";
+static char selbordercolor[]             = "#007755";
+static char selfloatcolor[]              = "#007755";
 
 static char titlenormfgcolor[]           = "#bbbbbb";
 static char titlenormbgcolor[]           = "#222222";
@@ -192,9 +192,9 @@ static char titlenormbordercolor[]       = "#444444";
 static char titlenormfloatcolor[]        = "#2499ff";
 
 static char titleselfgcolor[]            = "#eeeeee";
-static char titleselbgcolor[]            = "#2f4f4f";
-static char titleselbordercolor[]        = "#2f4f4f";
-static char titleselfloatcolor[]         = "#2f4f4f";
+static char titleselbgcolor[]            = "#007755";
+static char titleselbordercolor[]        = "#007755";
+static char titleselfloatcolor[]         = "#007755";
 
 static char tagsnormfgcolor[]            = "#bbbbbb";
 static char tagsnormbgcolor[]            = "#222222";
@@ -202,11 +202,11 @@ static char tagsnormbordercolor[]        = "#444444";
 static char tagsnormfloatcolor[]         = "#2499ff";
 
 static char tagsselfgcolor[]             = "#eeeeee";
-static char tagsselbgcolor[]             = "#2f4f4f";
+static char tagsselbgcolor[]             = "#005577";
 static char tagsselbordercolor[]         = "#777777";
-static char tagsselfloatcolor[]          = "#2f4f4f";
+static char tagsselfloatcolor[]          = "#005577";
 
-static char hidnormfgcolor[]             = "#2f4f4f";
+static char hidnormfgcolor[]             = "#005577";
 static char hidselfgcolor[]              = "#227799";
 static char hidnormbgcolor[]             = "#222222";
 static char hidselbgcolor[]              = "#222222";
@@ -224,8 +224,8 @@ static char ltsymbolbgcolor[]            = "#fe9877";
 #if RENAMED_SCRATCHPADS_PATCH
 static char scratchselfgcolor[]          = "#FFF7D4";
 static char scratchselbgcolor[]          = "#77547E";
-static char scratchselbordercolor[]      = "#894B9F";
-static char scratchselfloatcolor[]       = "#894B9F";
+static char scratchselbordercolor[]      = "#005577";
+static char scratchselfloatcolor[]       = "#005577";
 
 static char scratchnormfgcolor[]         = "#FFF7D4";
 static char scratchnormbgcolor[]         = "#664C67";
@@ -910,7 +910,7 @@ static const char *dmenucmd[] = {
 	#endif // BAR_DMENUMATCHTOP_PATCH
 	NULL
 };
-static const char *termcmd[]  = { "alacritty", NULL };
+static const char *termcmd[]  = { "kitty", NULL };
 
 #if BAR_STATUSCMD_PATCH
 #if BAR_DWMBLOCKS_PATCH
